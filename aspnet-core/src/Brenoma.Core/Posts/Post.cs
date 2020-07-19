@@ -21,7 +21,7 @@ namespace Brenoma.Posts
         public Category Category { get; set; }
 
 
-        public static Post Create(string title, string body, Guid authorId, Guid categoryId)
+        public static Post Create(string title, string body, Guid? authorId, Guid categoryId)
         {
             var post = new Post
             {

@@ -6,7 +6,7 @@ import {
   CategoryServiceProxy
 } from './../../../shared/service-proxies/service-proxies';
 import { AppComponentBase } from '@shared/app-component-base';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Output, EventEmitter } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { finalize } from 'rxjs/operators';
 
@@ -19,6 +19,7 @@ export class CreatePostComponent extends AppComponentBase implements OnInit {
 
   post: PostCreateInput = new PostCreateInput();
   categories: CategoryListDto[] = [];
+  @Output() onSave = new EventEmitter<any>();
   constructor(
     injector: Injector,
     public bsModalRef: BsModalRef,

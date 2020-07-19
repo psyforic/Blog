@@ -4,7 +4,6 @@ import { PostListDto, PostServiceProxy } from './../../shared/service-proxies/se
 import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { Component, OnInit, Injector } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { CreateCategoryComponent } from '@app/categories/create-category/create-category.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 
 @Component({

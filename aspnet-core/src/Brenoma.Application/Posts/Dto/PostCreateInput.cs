@@ -10,7 +10,7 @@ namespace Brenoma.Posts.Dto
     {
         public string Title { get; set; }
         public string Body { get; set; }
-        public Guid AuthorId { get; set; }
+        public Guid? AuthorId { get; set; }
         public Guid CategoryId { get; set; }
     }
 }

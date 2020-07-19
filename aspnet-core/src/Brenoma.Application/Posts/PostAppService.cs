@@ -23,7 +23,8 @@ namespace Brenoma.Posts
         }
         public async Task CreateAsync(PostCreateInput input)
         {
-            var post = Post.Create(input.Title, input.Body, input.AuthorId, input.CategoryId);
+            input.AuthorId = Guid.Empty;
+            var post = Post.Create(input.Title, input.Body, input.AuthorId.Value, input.CategoryId);
             await _postManager.CreateAsync(post);
         }
 
