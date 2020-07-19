@@ -1,0 +1,52 @@
+<div [@routerTransition]>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <h1>{{ "Categories" | localize }}</h1>
+                </div>
+                <div class="col-6 text-right">
+                    <a href="javascript:;" class="btn bg-blue" (click)="createCategory()">
+                        <i class="fa fa-plus-square"></i>
+                        {{ "Create" | localize }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content px-2">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>No. Posts</td>
+                                    <td>Actions</td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let cat of categories">
+                                    <td>{{cat?.name}}</td>
+                                    <td>{{cat?.posts?.length}} </td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="text-primary" (click)="edit(cat)">
+                                            <i class="fa fas fa-edit"></i>
+                                        </a>&nbsp;
+                                        <a href="javascript:void(0)" class="text-danger" (click)="delete(cat)">
+                                            <i class="fa fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
